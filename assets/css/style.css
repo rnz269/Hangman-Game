@@ -1,0 +1,26 @@
+.fancytitle {
+	color:blue;
+	font-family: lato;
+	font-size:5em;
+}
+
+body {
+	background-color:black;
+	color:white;
+}
+
+.left {
+	border:2px dotted white;
+}
+
+img {
+	width:100%;
+}
+
+.center {
+	border:2px dotted;
+}
+
+.row {
+	height:500px;
+}
