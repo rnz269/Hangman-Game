@@ -100,6 +100,7 @@ document.onkeyup = function(event) {
 				gameState.numberofGuesses = 15;
 				computerSelection = options[Math.floor(Math.random() * options.length)];
 				gameState.gameWord = computerSelection;
+				console.log(gameState.gameWord);
 				renderDashes();
 			}
 			if (gameState.numberofGuesses===0 && gameState.currentGuessedWord!=gameState.gameWord) {
