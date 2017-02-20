@@ -1,4 +1,4 @@
-var options = ["rizzo", "bryant", "russell", "lester", "arrieta", "hendricks"];
+var options = ["rizzo", "bryant", "russell", "lester", "arrieta", "hendricks", "davis", "edwards", "grimm", "lackey", "montgomery", "rondon", "strop", "contreras", "montero", "baez", "zobrist", "almora", "heyward", "jay", "schwarber", "szczur"];
 
 var computerSelection = options[Math.floor(Math.random() * options.length)];
 
