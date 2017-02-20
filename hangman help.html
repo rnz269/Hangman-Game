@@ -1,0 +1,48 @@
+
+How to approach Hangman:
+
+Variables represent the state of the game, they should be stored at top of screen
+
+Setup the game state
+	Use a JS object to track state
+Game needs to generate a word from a list
+	Lazily, just start with one word
+We need to accept user input to guess the word
+	Use the prompt function to get user input
+We need to keep track of the number of guesses
+	Add user guesses to an array
+We need to compare the user guesses to the game word
+	I have no idea right now
+We need to show the user their game status
+	Render a scoreboard on the page
+
+
+Use an object to track the game state. Instead of random variables, we have one object. Instead of accessing all of them individually, we can keep them bundled together. When a user enters an action, we can adjust our game state accordingly. 
+
+<script>
+var gameState = {
+	gameWord:"zebra",
+	currentGuessedLetter: "",
+	currentGuessedWord:"",
+	numberofGuesses:0
+};
+
+document.onkeyup = function(event) {
+	// being lazy in below line, need to use the keycode thing
+	var guessedLetter = "a";
+	gameState.currentGuessedLetter = guessedLetter;
+	gameState.numberofGuesses++;
+	renderScoreboard();
+};
+
+function renderScoreboard() {
+	var scoreboard = document.getElementById("scoreboard");
+	scoreboard.innerHTML = gameState.numberofGuesses;
+}
+
+
+
+
+</script>
+
+<div class="scoreboard"></div>

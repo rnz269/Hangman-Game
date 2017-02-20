@@ -16,8 +16,10 @@ var gameState = {
 	wins:0
 };
 
+renderDashes= function() {
+
 if(computerSelection.length===2){
-var div = document.getElementById('current').innerHTML = "- -";
+var div = document.getElementById('current').innerHTML = "--";
 gameState.currentGuessedWord = "--";
 }
 
@@ -60,16 +62,15 @@ else if(computerSelection.length===10){
 var div = document.getElementById('current').innerHTML = "----------";
 gameState.currentGuessedWord = "----------";
 }
+}
 
-
-
+renderDashes();
 
 String.prototype.replaceAt = function(index, character) {
     return this.substr(0, index) + character + this.substr(index + character.length);
 }
 
 document.onkeyup = function(event) {
-	// being lazy in below line, need to use the keycode thing
 	var guessedLetter = String.fromCharCode(event.keyCode).toLowerCase();
 	var hasBeenGuessed = false;
 	var correctLetterGuess = false;
@@ -99,6 +100,10 @@ document.onkeyup = function(event) {
 				gameState.numberofGuesses = 15;
 				computerSelection = options[Math.floor(Math.random() * options.length)];
 				gameState.gameWord = computerSelection;
+				renderDashes();
+			}
+			if (gameState.numberofGuesses===0 && gameState.currentGuessedWord!=gameState.gameWord) {
+				gameState.currentGuessedWord = "Your final score is " + gameState.wins +". Refresh page to try again!"
 			}
 			renderScoreboard();
 			}
